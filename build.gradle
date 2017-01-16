@@ -1,0 +1,36 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.google.cloud.tools:appengine-gradle-plugin:+'
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'com.google.cloud.tools.appengine'
+
+dependencies {
+  providedCompile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
+  compile 'com.google.appengine:appengine:+'
+  compile 'org.springframework:spring-webmvc:4.2.7.RELEASE'
+  runtime "com.fasterxml.jackson.core:jackson-databind:2.7.5"
+}
+
+appengine {
+  deploy {
+    stopPreviousVersion = true
+    promote = true
+  }
+}
+
+group = 'com.icecoldcode.appengine'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
