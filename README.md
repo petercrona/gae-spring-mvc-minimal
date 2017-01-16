@@ -94,7 +94,7 @@ thanks to AppContext.java, allows us to use annotations.
 
 I hope this minimal example helps you to understand Spring MVC a little better. Newer versions, using Spring Boot and/or Servlet 3+
 are a lot nicer. So don't use this! In fact, check out cool stuff like Yesod (Haskell) instead. 
-Just play with it if you have a legacy project running on App Engine. 
+Just play with this if you have a legacy project running on App Engine. 
 
 Creating a minimal example and extending it helps you to actually learn as opposed to just being able to produce features.
 And remember, understanding something reduces the risk of you getting stuck, reduces the risk of bugs, makes it possible to improve
