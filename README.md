@@ -1,7 +1,7 @@
 # gae-spring-mvc-minimal
 Hey, this is just a minimal Spring MVC (4.2.7) project that runs on App Engine and serve some JSON. To get it running and to deploy it:
 
-1. Install Python 2.7
+1. Install Python 2.7 (probably you have something that works, so try to skip this first)
 
 2. Create a new project or get the project ID of your existing project in the google cloud console (https://console.cloud.google.com/project).
 
