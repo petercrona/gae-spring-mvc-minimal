@@ -121,13 +121,13 @@ repositories {
 }
 
 ```
-Here we define repositories for dependencies that are application has.
+Here we define repositories for dependencies that our application has.
 
 ```
 apply plugin: 'war'
 apply plugin: 'com.google.cloud.tools.appengine'
 ```
-Here we apply plugins provided by gradle. These are assuming that are directory structure is as it is. And they add "tasks" that you can see by running "gradle tasks". One of these tasks are "appengineRun". Next we declare dependencies of our application (not the build script as before).
+Here we apply plugins provided by gradle. These are assuming that our directory structure is as it is. And they add "tasks" that you can see by running "gradle tasks". One of these tasks are "appengineRun". Next we declare dependencies of our application (not the build script as before).
 
 ```
 dependencies {
