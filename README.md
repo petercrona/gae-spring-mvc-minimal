@@ -101,7 +101,7 @@ And remember, understanding something reduces the risk of you getting stuck, red
 it and makes it more fun to work with it.
 
 #build.gradle
-It's easy to get overwhelmed by how many stuff are happening. If you are used to messy Java programming with classpath issues and just relying on the IDE to get it right, then you probably feel that something complicated is going on. But in fact most of the work is just based on conventions. You need to have a specific folder structure. Then the build just works. Not by magic, but by a fixed folder structure. Let's go through the *build.gradle* file section by section.
+It's easy to get overwhelmed by how much stuff is happening. If you are used to messy Java programming with classpath issues and just relying on the IDE to get it right, then you probably feel that something complicated is going on. But in fact most of the work is just based on conventions. You need to have a specific folder structure. Then the build just works. Not by magic, but by a fixed folder structure. Let's go through the *build.gradle* file section by section.
 
 Here we are defining dependencies that the build script (as opposed to the application) itself has.
 ```
