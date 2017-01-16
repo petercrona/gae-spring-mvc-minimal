@@ -99,3 +99,54 @@ Just play with it if you have a legacy project running on App Engine.
 Creating a minimal example and extending it helps you to actually learn as opposed to just being able to produce features.
 And remember, understanding something reduces the risk of you getting stuck, reduces the risk of bugs, makes it possible to improve
 it and makes it more fun to work with it.
+
+#build.gradle
+It's easy to get overwhelmed by how many stuff are happening. If you are used to messy Java programming with classpath issues and just relying on the IDE to get it right, then you probably feel that something complicated is going on. But in fact most of the work is just based on conventions. You need to have a specific folder structure. Then the build just works. Not by magic, but by a fixed folder structure. Let's go through the *build.gradle* file section by section.
+
+```
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.google.cloud.tools:appengine-gradle-plugin:+'
+  }
+}
+```
+Here we are defining dependencies that the build script (as opposed to the application) itself has.
+
+```
+repositories {
+  mavenCentral()
+}
+
+```
+Here we define repositories for dependencies that are application has.
+
+```
+apply plugin: 'war'
+apply plugin: 'com.google.cloud.tools.appengine'
+```
+
+Here we apply plugins provided by gradle. These are assuming that are directory structure is as it is. And they add "tasks" that you can see by running "gradle tasks". One of these tasks are "appengineRun". Next we declare dependencies of our application (not the build script as before).
+
+```
+dependencies {
+  compile 'javax.servlet:servlet-api:2.5'
+  compile 'com.google.appengine:appengine:+'
+  compile 'org.springframework:spring-webmvc:4.2.7.RELEASE'
+  compile 'com.fasterxml.jackson.core:jackson-databind:2.7.5'
+}
+```
+
+Quite clear. These are fetched using the *repositories* previously defined. "compile" means needed to compile. There's also for example "runtime" which I didn't use here. That's it! We can configure more things, such as "appengine". Eg.
+
+```
+appengine {
+  deploy {
+    stopPreviousVersion = true
+    promote = true
+  }
+}
+```
+to configure "appengineDeploy". But it's not necessary.
