@@ -103,7 +103,6 @@ it and makes it more fun to work with it.
 #build.gradle
 It's easy to get overwhelmed by how much stuff is happening. If you are used to messy Java programming with classpath issues and just relying on the IDE to get it right, then you probably feel that something complicated is going on. But in fact most of the work is just based on conventions. You need to have a specific folder structure. Then the build just works. Not by magic, but by a fixed folder structure. Let's go through the *build.gradle* file section by section.
 
-Here we are defining dependencies that the build script (as opposed to the application) itself has.
 ```
 buildscript {
   repositories {
@@ -114,22 +113,22 @@ buildscript {
   }
 }
 ```
+Here we are defining dependencies that the build script (as opposed to the application) itself has.
 
-Here we define repositories for dependencies that are application has.
 ```
 repositories {
   mavenCentral()
 }
 
 ```
+Here we define repositories for dependencies that are application has.
 
-Here we apply plugins provided by gradle. These are assuming that are directory structure is as it is. And they add "tasks" that you can see by running "gradle tasks". One of these tasks are "appengineRun". Next we declare dependencies of our application (not the build script as before).
 ```
 apply plugin: 'war'
 apply plugin: 'com.google.cloud.tools.appengine'
 ```
+Here we apply plugins provided by gradle. These are assuming that are directory structure is as it is. And they add "tasks" that you can see by running "gradle tasks". One of these tasks are "appengineRun". Next we declare dependencies of our application (not the build script as before).
 
-Quite clear. These are fetched using the *repositories* previously defined. "compile" means needed to compile. There's also for example "runtime" which I didn't use here. That's it! We can configure more things, such as "appengine". Eg.
 ```
 dependencies {
   compile 'javax.servlet:servlet-api:2.5'
@@ -138,8 +137,8 @@ dependencies {
   compile 'com.fasterxml.jackson.core:jackson-databind:2.7.5'
 }
 ```
+Quite clear. These are fetched using the *repositories* previously defined. "compile" means needed to compile. There's also for example "runtime" which I didn't use here. That's it! We can configure more things, such as "appengine". Eg.
 
-to configure "appengineDeploy". But it's not necessary.
 ```
 appengine {
   deploy {
@@ -148,4 +147,4 @@ appengine {
   }
 }
 ```
-
+to configure "appengineDeploy". But it's not necessary.
