@@ -115,6 +115,7 @@ buildscript {
 ```
 Here we are defining dependencies that the build script (as opposed to the application) itself has.
 
+
 ```
 repositories {
   mavenCentral()
@@ -123,11 +124,13 @@ repositories {
 ```
 Here we define repositories for dependencies that our application has.
 
+
 ```
 apply plugin: 'war'
 apply plugin: 'com.google.cloud.tools.appengine'
 ```
-Here we apply plugins provided by gradle. These are assuming that our directory structure is as it is. And they add "tasks" that you can see by running "gradle tasks". One of these tasks are "appengineRun". Next we declare dependencies of our application (not the build script as before).
+Here we apply plugins provided by gradle. These are assuming that our directory structure is as it is. And they add "tasks" that you can see by running "gradle tasks". One of these tasks is "appengineRun". Next we declare dependencies of our application (not the build script as before).
+
 
 ```
 dependencies {
@@ -138,6 +141,7 @@ dependencies {
 }
 ```
 Quite clear. These are fetched using the *repositories* previously defined. "compile" means needed to compile. There's also for example "runtime" which I didn't use here. That's it! We can configure more things, such as "appengine". Eg.
+
 
 ```
 appengine {
