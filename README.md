@@ -9,9 +9,9 @@ Hey, this is just a minimal Spring MVC (4.2.7) project that runs on App Engine a
 
 4. Update "src/main/webapp/WEB-INF/appengine-web.xml with your project id (replace YOUR_APP_ID).
 
-5. Run "gradle aR" (or "gradle appengineRun") when in the project's root folder.
+5. Run "gradle aR" (or "gradle appengineRun") when in the project's root folder. Check out localhost:8080!
 
-6. Run "gradle aD" (or "gradle appengineDeploy")
+6. Run "gradle aD" (or "gradle appengineDeploy"). Check out YOUR_PROJECT_ID.appspot.com!
 
 ## What happens
 
